@@ -1,47 +1,45 @@
-import { useEffect, useRef } from 'react'
-import Plate from './Plate'
+import { useEffect, useState } from 'react'
+import { heroSlides } from '../data/content'
 
-export default function Hero() {
-  const root = useRef(null)
+const PANELS = 3
 
-  // Scroll-linked spin: the plate turns and the photo drifts as the page scrolls.
+// Three vertical panels, like reels, each showing a different photo of Steven training.
+// They change on a timer, one panel after the other.
+function Slides() {
+  const [step, setStep] = useState(0)
+  const { images, interval } = heroSlides
+
   useEffect(() => {
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)')
-    if (reduce.matches || !root.current) return undefined
-    let frame = 0
-    const onScroll = () => {
-      cancelAnimationFrame(frame)
-      frame = requestAnimationFrame(() => {
-        const y = Math.min(window.scrollY, 1200)
-        root.current?.style.setProperty('--scroll-turn', `${y * 0.25}deg`)
-        root.current?.style.setProperty('--scroll-shift', `${y * 0.12}px`)
-      })
-    }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-      cancelAnimationFrame(frame)
-    }
-  }, [])
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduce) return undefined
+    const id = setInterval(() => setStep((s) => s + 1), interval)
+    return () => clearInterval(id)
+  }, [interval])
 
   return (
-    <section className="hero" ref={root} aria-labelledby="hero-title">
-      <figure className="hero__photo">
-        <img
-          src="/img/steven-squat.jpg"
-          alt="Steven Pelaez haciendo sentadilla con barra en el rack"
-          width="900"
-          height="1600"
-          fetchPriority="high"
-        />
-      </figure>
+    <div className="slides" aria-hidden="true">
+      {Array.from({ length: PANELS }, (_, p) => {
+        const current = (step + p * 2) % images.length
+        return (
+          <div key={p} className={`slides__panel slides__panel--${p}`}>
+            {images.map((img, i) => (
+              <figure key={img.src} className={`slide${i === current ? ' is-active' : ''}`}>
+                <img src={img.src} alt="" width="720" height="1280" loading={i < PANELS * 2 ? 'eager' : 'lazy'} />
+                <figcaption>{img.label}</figcaption>
+              </figure>
+            ))}
+            <span key={step} className="slides__bar" />
+          </div>
+        )
+      })}
+    </div>
+  )
+}
 
-      <div className="hero__plate">
-        <div className="hero__spin">
-          <Plate id="hero-plate" />
-        </div>
-      </div>
-
+export default function Hero() {
+  return (
+    <section className="hero" aria-labelledby="hero-title">
+      <Slides />
       <div className="hero__copy">
         <p className="hero__name">Steven Pelaez</p>
         <h1 id="hero-title" className="hero__title">
@@ -52,7 +50,7 @@ export default function Hero() {
         </p>
         <div className="hero__actions">
           <a className="button button--yellow" href="#plan">Arma tu plan</a>
-          <a className="button button--ghost" href="#planes">Ver planes</a>
+          <a className="button button--ghost" href="#clientas">Ver resultados</a>
         </div>
       </div>
     </section>

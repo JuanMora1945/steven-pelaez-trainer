@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import Clients from './components/Clients'
 import Faq from './components/Faq'
 import Hero from './components/Hero'
 import HowItWorks from './components/HowItWorks'
@@ -44,6 +45,7 @@ export default function App() {
         <Pricing />
         <PlanBuilder />
         <HowItWorks />
+        <Clients />
         <About />
         <Faq />
         <Contact />

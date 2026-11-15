@@ -29,8 +29,8 @@ export function Nav() {
 
 export function Facts() {
   const facts = [
-    { big: 'ENADE', text: 'Egresado de la Escuela Nacional del Deporte' },
-    { big: 'PT', text: 'Equipo de entrenadores Smart Fit Unicentro' },
+    { big: 'Profesional', text: 'Egresado de la Escuela Nacional del Deporte' },
+    { big: 'Smart Fit', text: 'Equipo de entrenadores personales de Unicentro' },
     { big: '1 a 1', text: 'Presencial en Cali u online desde cualquier ciudad' },
   ]
   return (

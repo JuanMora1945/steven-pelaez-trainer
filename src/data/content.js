@@ -51,22 +51,27 @@ export const plans = {
 export const steps = [
   {
     name: 'Valoración',
+    clip: 'coach-bench',
     text: 'Hablamos de tu objetivo, tu historial y tus horarios. Tomamos medidas y fotos de inicio para comparar después.',
   },
   {
     name: 'Tu plan',
+    clip: 'steven-pulldown',
     text: 'Armo tu rutina según tus días, tu nivel y el gimnasio donde entrenas. Nada de copiar la rutina de otro.',
   },
   {
     name: 'Entrenar',
+    clip: 'steven-shoulder',
     text: 'En persona corrijo tu técnica en cada serie. Online recibes el video de cada ejercicio y me mandas los tuyos.',
   },
   {
     name: 'Seguimiento',
+    clip: 'steven-row',
     text: 'Cada semana revisamos cargas, sensaciones y alimentación por WhatsApp. Si algo no funciona, lo cambiamos.',
   },
   {
     name: 'Resultados',
+    clip: 'steven-squat',
     text: 'Cada mes comparamos medidas y fotos contra el inicio y subimos el nivel del plan.',
   },
 ]
@@ -96,4 +101,25 @@ export const faqs = [
     q: '¿Vendes suplementos?',
     a: 'Sí. Te recomiendo solo los que tienen sentido para tu objetivo, y muchos planes funcionan sin ninguno.',
   },
+]
+
+// Hero image changer: frames of Steven training, taken from his Instagram reels.
+export const heroSlides = {
+  interval: 3200,
+  images: [
+    { src: '/img/hero/steven-squat.jpg', label: 'Sentadilla con barra', alt: 'Steven Pelaez haciendo sentadilla con barra' },
+    { src: '/img/hero/steven-shoulder.jpg', label: 'Press de hombro', alt: 'Steven Pelaez en la máquina de press de hombro' },
+    { src: '/img/hero/coach-bench.jpg', label: 'Asistiendo un press de banca', alt: 'Steven Pelaez asistiendo a un alumno en press de banca' },
+    { src: '/img/hero/steven-row.jpg', label: 'Remo con mancuerna', alt: 'Steven Pelaez haciendo remo con mancuerna en banco inclinado' },
+    { src: '/img/hero/steven-pulldown.jpg', label: 'Jalón al pecho', alt: 'Steven Pelaez en la máquina de jalón' },
+    { src: '/img/steven-smile.jpg', label: 'Smart Fit Unicentro', alt: 'Steven Pelaez sonriendo con su uniforme de entrenador' },
+  ],
+}
+
+// Short clips from Steven's reels (muted, 6 s, 540 px wide).
+export const clientClips = [
+  { src: '/video/client-deadlift.mp4', poster: '/video/client-deadlift.jpg', label: 'Peso muerto' },
+  { src: '/video/client-pullup.mp4', poster: '/video/client-pullup.jpg', label: 'Dominadas' },
+  { src: '/video/coach-glute.mp4', poster: '/video/coach-glute.jpg', label: 'Día de glúteo' },
+  { src: '/video/coach-clients.mp4', poster: '/video/coach-clients.jpg', label: 'Tren inferior en máquina' },
 ]
