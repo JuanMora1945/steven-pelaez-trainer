@@ -7,7 +7,7 @@ Branch: `feat/landing` · Delivery: single PR (Juan approves push/PR) · Tests: 
 
 - S1 — React project: "si utiliza lo mas optimo para usar react". Vite + React, pnpm, deployable to Netlify.
 - S2 — Services: "el ofrece asesorias onnline y presenciales vinculadas al smarfit de unicentro si la persona esta en cali". Two offers: online coaching and in-person training at Smart Fit Unicentro (Cali).
-- S3 — Contact: "su nombre de usuario de wp es stevenpelaez_13". WhatsApp contact built from one config value (username now; phone number can replace it).
+- S3 — Contact: "su nombre de usuario de wp es stevenpelaez_13" and "la dinamica es que mediante whatsapp stiven cuadre precios con los interesados, no tengo su numero, el usuario de whatsapp debe bastar para direccionar a su chat". WhatsApp links use the username; the page shows no prices.
 - S4 — Content source: "si me falta info sacala del ig" (instagram.com/stevenpelaez.trainer). Bio facts: trainer at Smart Fit (PT Unicentro team), online coaching, supplement sales, graduate of Escuela Nacional del Deporte.
 - S5 — Look: "quiero que la pagina se vea moderna y llamativa" and "quiero que tenga un banner con movimiento y sea muy llamativo y profesional".
 - S6 — SEO and design: "usa las tecnicas de Seo y dise[ño]" (message was cut). Meta tags, Open Graph, JSON-LD, sitemap, robots, semantic HTML, responsive at desktop and 390 px, contrast 4.5:1, prefers-reduced-motion.
@@ -29,7 +29,9 @@ Branch: `feat/landing` · Delivery: single PR (Juan approves push/PR) · Tests: 
 - L1 (2026-11-14, Juan, verbatim): "su nombre de usuario de wp es stevenpelaez_13 y si utiliza lo mas optimo para usar react, el ofrece asesorias onnline y presenciales vinculadas al smarfit de unicentro si la persona esta en cali y si me falta info sacala del ig, quiero que la pagina se vea moderna y llamativa, usa las tecnicas de Seo y dise"
 - L2 (2026-11-14, Juan, verbatim): "quiero que tenga un banner con movimiento y sea muy llamativo y profesional"
 - L3 (2026-11-14, Juan, verbatim): "en mis guardados de instagram tebgo varios videos guardados de ideas de paginas modernas, no tines que copiar igual, solo tomar ideas"
-- L4: Instagram has no prices, hours or phone. Prices, hours and payment methods on the page are SAMPLE values to confirm with Steven before publishing.
+- L4: Instagram has no prices, hours or phone. Hours and address on the page are SAMPLE values to confirm with Steven (prices were removed after L8).
 - L5: WhatsApp documents `wa.me/<username>` links, but the rollout is regional; not confirmed for Colombia. Switch to the phone number in `src/data/content.js` if the link does not open a chat.
 - L6: Design direction dealt by design-taste-frontend: `colour-chapters`, seed 24615522. Idea: the two weight plates of a barbell become the two modes (in person / online).
 - L7: Verified in Chrome: plates spin and turn with scroll, orbit and marquee move, plan builder updates the WhatsApp text. inspect.mjs: 0 FAIL, 3 WARN (font size count, no video, marquee "empty middle"). Pending: Steven's own photos and reel, real prices, hours, phone number.
+- L8 (2026-11-15, Juan, verbatim): "la dinamica es que mediante whatsapp stiven cuadre precios con los interesados, no tengo su numero, el usuario de whatsapp debe bastar para direccionar a su chat"
+- L9: Checked in Chrome: `wa.me/stevenpelaez_13?text=Hola` redirects to `api.whatsapp.com/send/?...&username=stevenpelaez_13&type=username` and shows "Chatea en WhatsApp con el @stevenpelaez_13" with the text kept. The app step was not opened. Prices removed; plans show "A tu medida" and a "Cotizar por WhatsApp" button; FAQ "¿Cuánto cuesta?" added. Pricing tests RED (2 failed) → GREEN 12/12.

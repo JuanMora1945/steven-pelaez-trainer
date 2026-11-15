@@ -79,7 +79,9 @@ export function Intro() {
 }
 
 function PlanField({ plan, tone }) {
-  const link = buildWhatsAppLink(`Hola Steven, vi tu página. Quiero información del plan de ${plan.messageName}.`)
+  const link = buildWhatsAppLink(
+    `Hola Steven, vi tu página. Quiero saber el precio del plan de ${plan.messageName}.`,
+  )
   return (
     <article className={`plan plan--${tone}`} aria-labelledby={`plan-${plan.id}`}>
       <h2 id={`plan-${plan.id}`} className="plan__name reveal">{plan.name}</h2>
@@ -87,10 +89,10 @@ function PlanField({ plan, tone }) {
       <p className="plan__includes reveal">{plan.includes}</p>
       <div className="plan__foot">
         <p className="plan__price">
-          {plan.price} <span>{plan.period}</span>
+          A tu medida <span>Steven te da el precio por WhatsApp según tus días y tu objetivo.</span>
         </p>
         <a className="button button--ink" href={link} target="_blank" rel="noopener noreferrer">
-          Quiero este plan
+          Cotizar por WhatsApp
         </a>
       </div>
     </article>

@@ -663,7 +663,9 @@ a {
 
 .plan__price span {
   display: block;
-  margin-top: 10px;
+  max-width: 30ch;
+  margin-top: 14px;
+  line-height: 1.35;
   font-size: var(--step-body);
   font-weight: 500;
   letter-spacing: 0;
@@ -1303,7 +1305,7 @@ a.row--hello:hover {
   }
 
   .plan__price {
-    font-size: 16vw;
+    font-size: 14vw;
   }
 
   .plan__foot .button {

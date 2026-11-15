@@ -2,8 +2,8 @@
 // Values marked SAMPLE are placeholders to confirm with Steven before publishing.
 
 export const contact = {
-  // WhatsApp: a phone number in international format always works (e.g. '+57 300 000 0000').
-  // While it is empty the link uses the WhatsApp username, which depends on a regional rollout.
+  // WhatsApp opens Steven's chat by username (wa.me/<username>, checked 2026-11-15).
+  // A phone number in international format, if added later, takes priority.
   phone: '',
   username: 'stevenpelaez_13',
   instagram: 'https://www.instagram.com/stevenpelaez.trainer/',
@@ -37,8 +37,6 @@ export const plans = {
     who: 'Para quien vive en Cali y quiere a Steven al lado en cada serie.',
     includes:
       'Sesiones uno a uno en Smart Fit Unicentro, valoración inicial, técnica corregida en cada ejercicio, plan de entrenamiento por escrito y pautas de alimentación según tu objetivo. Necesitas tu membresía de Smart Fit activa.',
-    price: '$450.000', // SAMPLE
-    period: 'al mes, 3 días por semana',
   },
   online: {
     id: 'online',
@@ -47,8 +45,6 @@ export const plans = {
     who: 'Para quien entrena en cualquier gimnasio o ciudad y quiere un plan serio.',
     includes:
       'Rutina a tu medida con video de cada ejercicio, pautas de alimentación, revisión semanal por WhatsApp y ajustes del plan cada mes según tu progreso.',
-    price: '$180.000', // SAMPLE
-    period: 'al mes',
   },
 }
 
@@ -76,6 +72,10 @@ export const steps = [
 ]
 
 export const faqs = [
+  {
+    q: '¿Cuánto cuesta?',
+    a: 'Depende de la modalidad, los días por semana y tu objetivo. Escríbele a Steven por WhatsApp y te da el precio de tu plan.',
+  },
   {
     q: '¿Necesito ser afiliado de Smart Fit?',
     a: 'Para el plan presencial sí: entrenamos en la sede Unicentro y necesitas tu membresía activa. La asesoría online sirve en cualquier gimnasio.',
