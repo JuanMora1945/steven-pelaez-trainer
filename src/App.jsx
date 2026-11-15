@@ -3,7 +3,7 @@ import Faq from './components/Faq'
 import Hero from './components/Hero'
 import HowItWorks from './components/HowItWorks'
 import PlanBuilder from './components/PlanBuilder'
-import { About, Contact, Footer, Intro, Marquee, Nav, Pricing } from './components/Sections'
+import { About, Contact, Facts, Footer, Nav, Pricing } from './components/Sections'
 
 // Reveals each `.reveal` element once it enters the viewport.
 // Content stays visible when the observer is missing or motion is reduced.
@@ -36,14 +36,13 @@ export default function App() {
   useReveal()
   return (
     <>
-      <a className="skip" href="#main">Saltar al contenido</a>
+      <a id="top" className="skip" href="#main">Saltar al contenido</a>
       <Nav />
       <main id="main">
         <Hero />
-        <Marquee />
-        <Intro />
-        <PlanBuilder />
+        <Facts />
         <Pricing />
+        <PlanBuilder />
         <HowItWorks />
         <About />
         <Faq />

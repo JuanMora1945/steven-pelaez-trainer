@@ -35,7 +35,7 @@ export default function PlanBuilder() {
   const place = modes.find((m) => m.id === mode)?.place
 
   return (
-    <section id="plan" className="chapter chapter--grey builder" aria-labelledby="plan-title">
+    <section id="plan" className="builder" aria-labelledby="plan-title">
       <div className="grid">
         <div className="builder__form reveal">
           <h2 id="plan-title" className="head">Arma tu plan</h2>
@@ -55,12 +55,11 @@ export default function PlanBuilder() {
 
         <div className="builder__result reveal" aria-live="polite">
           <h3 className="builder__plan">{plan.name}</h3>
-          <p className="builder__place">{place}</p>
           <p className="builder__count">
-            <strong>{plan.sessionsPerMonth}</strong> entrenamientos al mes
+            <strong>{plan.sessionsPerMonth}</strong> entrenamientos al mes, {place}
           </p>
           <blockquote className="builder__message">{message}</blockquote>
-          <a className="button button--ink" href={link} target="_blank" rel="noopener noreferrer">
+          <a className="button button--yellow" href={link} target="_blank" rel="noopener noreferrer">
             Enviar a Steven por WhatsApp
           </a>
         </div>
