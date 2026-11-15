@@ -13,7 +13,7 @@ export default function LazyVideo({ src, poster, label, className = '' }) {
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          video.play().catch(() => {})
+          Promise.resolve(video.play?.()).catch(() => {})
         } else {
           video.pause()
         }

@@ -103,19 +103,6 @@ export const faqs = [
   },
 ]
 
-// Hero image changer: frames of Steven training, taken from his Instagram reels.
-export const heroSlides = {
-  interval: 3200,
-  images: [
-    { src: '/img/hero/steven-squat.jpg', label: 'Sentadilla con barra', alt: 'Steven Pelaez haciendo sentadilla con barra' },
-    { src: '/img/hero/steven-shoulder.jpg', label: 'Press de hombro', alt: 'Steven Pelaez en la máquina de press de hombro' },
-    { src: '/img/hero/coach-bench.jpg', label: 'Asistiendo un press de banca', alt: 'Steven Pelaez asistiendo a un alumno en press de banca' },
-    { src: '/img/hero/steven-row.jpg', label: 'Remo con mancuerna', alt: 'Steven Pelaez haciendo remo con mancuerna en banco inclinado' },
-    { src: '/img/hero/steven-pulldown.jpg', label: 'Jalón al pecho', alt: 'Steven Pelaez en la máquina de jalón' },
-    { src: '/img/steven-smile.jpg', label: 'Smart Fit Unicentro', alt: 'Steven Pelaez sonriendo con su uniforme de entrenador' },
-  ],
-}
-
 // Short clips from Steven's reels (muted, 6 s, 540 px wide).
 export const clientClips = [
   { src: '/video/client-deadlift.mp4', poster: '/video/client-deadlift.jpg', label: 'Peso muerto' },

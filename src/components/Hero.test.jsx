@@ -1,26 +1,38 @@
 import { act, render, screen } from '@testing-library/react'
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import Hero from './Hero'
-import { heroSlides } from '../data/content'
 
-describe('Hero image changer', () => {
-  beforeEach(() => vi.useFakeTimers())
-  afterEach(() => vi.useRealTimers())
-
-  it('shows a photo of Steven training in each of the three panels', () => {
+describe('Hero: video inside the letters', () => {
+  it('has a clear h1, a muted inline video of Steven and no image changer', () => {
     const { container } = render(<Hero />)
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/entrenador personal/i)
-    const active = container.querySelectorAll('.slides__panel .is-active img')
-    expect(active).toHaveLength(3)
-    const srcs = [...active].map((img) => img.getAttribute('src'))
-    expect(new Set(srcs).size).toBe(3)
+    const video = container.querySelector('video')
+    expect(video.muted).toBe(true)
+    expect(video).toHaveAttribute('playsinline')
+    expect(video.getAttribute('poster')).toMatch(/hero-squat\.jpg$/)
+    expect(container.querySelector('.slides')).toBeNull()
   })
 
-  it('changes the photos on its own after a few seconds', () => {
+  it('hides the giant word from screen readers', () => {
     const { container } = render(<Hero />)
-    const first = container.querySelector('.slides__panel .is-active img').getAttribute('src')
-    act(() => vi.advanceTimersByTime(heroSlides.interval + 50))
-    const next = container.querySelector('.slides__panel .is-active img').getAttribute('src')
-    expect(next).not.toBe(first)
+    const word = container.querySelector('.reveal-word')
+    expect(word).toHaveTextContent('STEVEN')
+    expect(word.closest('[aria-hidden="true"]')).not.toBeNull()
+  })
+
+  it('opens the letters as the visitor scrolls', () => {
+    const { container } = render(<Hero />)
+    const hero = container.querySelector('.hero')
+    hero.getBoundingClientRect = () => ({ top: -400, height: 1800, bottom: 1400, left: 0, right: 0, width: 0 })
+    Object.defineProperty(window, 'innerHeight', { value: 900, configurable: true })
+    act(() => {
+      window.dispatchEvent(new Event('scroll'))
+    })
+    return new Promise((resolve) => {
+      requestAnimationFrame(() => {
+        expect(Number(hero.style.getPropertyValue('--p'))).toBeCloseTo(400 / 900, 2)
+        resolve()
+      })
+    })
   })
 })
