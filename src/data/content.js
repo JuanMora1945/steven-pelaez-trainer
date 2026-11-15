@@ -1,0 +1,145 @@
+// All page copy lives here so it can be updated without touching components.
+// Values marked SAMPLE are placeholders to confirm with Steven before publishing.
+
+export const contact = {
+  // WhatsApp: a phone number in international format always works (e.g. '+57 300 000 0000').
+  // While it is empty the link uses the WhatsApp username, which depends on a regional rollout.
+  phone: '',
+  username: 'stevenpelaez_13',
+  instagram: 'https://www.instagram.com/stevenpelaez.trainer/',
+  instagramHandle: '@stevenpelaez.trainer',
+  gym: 'Smart Fit Unicentro',
+  street: 'C.C. Unicentro, Cra.\u00a0100\u00a0#5\u2011169', // verify with Steven; non-breaking spaces keep "Cra. 100 #5-169" on one line
+  city: 'Cali, Valle del Cauca',
+  hours: 'Lunes a sábado, con cita', // SAMPLE
+  mapUrl: 'https://www.google.com/maps/search/?api=1&query=Smart+Fit+Unicentro+Cali',
+}
+
+export const modes = [
+  { id: 'presencial', label: 'Presencial', place: 'en Smart Fit Unicentro, Cali' },
+  { id: 'online', label: 'Online', place: 'desde donde estés' },
+]
+
+export const goals = [
+  { id: 'grasa', label: 'Bajar grasa', phrase: 'bajar grasa' },
+  { id: 'masa', label: 'Ganar masa', phrase: 'ganar masa muscular' },
+  { id: 'fuerza', label: 'Más fuerza', phrase: 'ganar fuerza' },
+  { id: 'salud', label: 'Salud y movilidad', phrase: 'mejorar mi salud y movilidad' },
+]
+
+export const dayOptions = [3, 4, 5]
+
+export const plans = {
+  presencial: {
+    id: 'presencial',
+    name: 'Entrenamiento presencial',
+    messageName: 'entrenamiento presencial en Smart Fit Unicentro',
+    who: 'Para quien vive en Cali y quiere a Steven al lado en cada serie.',
+    includes:
+      'Sesiones uno a uno en Smart Fit Unicentro, valoración inicial, técnica corregida en cada ejercicio, plan de entrenamiento por escrito y pautas de alimentación según tu objetivo. Necesitas tu membresía de Smart Fit activa.',
+    price: '$450.000', // SAMPLE
+    period: 'al mes, 3 días por semana',
+  },
+  online: {
+    id: 'online',
+    name: 'Asesoría online',
+    messageName: 'asesoría online',
+    who: 'Para quien entrena en cualquier gimnasio o ciudad y quiere un plan serio.',
+    includes:
+      'Rutina a tu medida con video de cada ejercicio, pautas de alimentación, revisión semanal por WhatsApp y ajustes del plan cada mes según tu progreso.',
+    price: '$180.000', // SAMPLE
+    period: 'al mes',
+  },
+}
+
+export const steps = [
+  {
+    name: 'Valoración',
+    text: 'Hablamos de tu objetivo, tu historial y tus horarios. Tomamos medidas y fotos de inicio para comparar después.',
+  },
+  {
+    name: 'Tu plan',
+    text: 'Armo tu rutina según tus días, tu nivel y el gimnasio donde entrenas. Nada de copiar la rutina de otro.',
+  },
+  {
+    name: 'Entrenar',
+    text: 'En persona corrijo tu técnica en cada serie. Online recibes el video de cada ejercicio y me mandas los tuyos.',
+  },
+  {
+    name: 'Seguimiento',
+    text: 'Cada semana revisamos cargas, sensaciones y alimentación por WhatsApp. Si algo no funciona, lo cambiamos.',
+  },
+  {
+    name: 'Resultados',
+    text: 'Cada mes comparamos medidas y fotos contra el inicio y subimos el nivel del plan.',
+  },
+]
+
+export const faqs = [
+  {
+    q: '¿Necesito ser afiliado de Smart Fit?',
+    a: 'Para el plan presencial sí: entrenamos en la sede Unicentro y necesitas tu membresía activa. La asesoría online sirve en cualquier gimnasio.',
+  },
+  {
+    q: '¿Sirve si nunca he entrenado?',
+    a: 'Sí. Empezamos con cargas bajas y aprendes la técnica de cada ejercicio antes de subir el peso.',
+  },
+  {
+    q: '¿Cómo funciona la asesoría online?',
+    a: 'Recibes tu rutina con videos, me mandas videos de tus series para corregir la técnica y cada semana revisamos tu progreso por WhatsApp.',
+  },
+  {
+    q: '¿Incluye alimentación?',
+    a: 'Incluye pautas de alimentación según tu objetivo. Si tienes una condición médica, trabajamos junto con tu nutricionista o médico.',
+  },
+  {
+    q: '¿Vendes suplementos?',
+    a: 'Sí. Te recomiendo solo los que tienen sentido para tu objetivo, y muchos planes funcionan sin ninguno.',
+  },
+]
+
+export const credits = [
+  {
+    file: 'dumbbell-rack.jpg',
+    title: 'Free gym dumbbell rack photo',
+    licence: 'CC0',
+    licenceUrl: 'https://creativecommons.org/publicdomain/zero/1.0/',
+    source: 'https://www.rawpixel.com/image/5905602/photo-image-public-domain-free-workout',
+    via: 'rawpixel',
+  },
+  {
+    file: 'dumbbells-floor.jpg',
+    title: 'Free gym dumbbell floor photo',
+    licence: 'CC0',
+    licenceUrl: 'https://creativecommons.org/publicdomain/zero/1.0/',
+    source: 'https://www.rawpixel.com/image/5920917/photo-image-public-domain-free-workout',
+    via: 'rawpixel',
+  },
+  {
+    file: 'weights-room.jpg',
+    title: 'Turner Hall Milwaukee weights room',
+    author: 'James Steakley',
+    licence: 'CC BY-SA 4.0',
+    licenceUrl: 'https://creativecommons.org/licenses/by-sa/4.0',
+    source: 'https://commons.wikimedia.org/wiki/File:Turner_Hall_Milwaukee_weights_room.jpg',
+    via: 'Wikimedia Commons',
+  },
+  {
+    file: 'plate-rack.jpg',
+    title: 'Weight plate 1',
+    author: 'SAgbley',
+    licence: 'CC BY-SA 4.0',
+    licenceUrl: 'https://creativecommons.org/licenses/by-sa/4.0',
+    source: 'https://commons.wikimedia.org/wiki/File:Weight_plate_1.jpg',
+    via: 'Wikimedia Commons',
+  },
+  {
+    file: 'cali-skyline.jpg',
+    title: 'Cali downtown skyline',
+    author: 'Johannes Bud',
+    licence: 'CC BY-SA 4.0',
+    licenceUrl: 'https://creativecommons.org/licenses/by-sa/4.0',
+    source: 'https://commons.wikimedia.org/wiki/File:Cali_downtown-_skyline.jpg',
+    via: 'Wikimedia Commons',
+  },
+]
