@@ -115,12 +115,12 @@ export function Pricing() {
       <div className="pricing__grid">
         <PlanCard
           plan={plans.presencial}
-          photo="/img/steven-clients.jpg"
+          photo="/img/steven-clients.webp"
           alt="Steven Pelaez con cuatro de sus clientas en Smart Fit Unicentro"
         />
         <PlanCard
           plan={plans.online}
-          photo="/img/process/curl.jpg"
+          photo="/img/process/curl.webp"
           alt="Steven Pelaez haciendo curl de bíceps con mancuernas en el gimnasio"
         />
       </div>
@@ -133,7 +133,7 @@ export function About() {
     <section id="sobre" className="about" aria-labelledby="about-title">
       <figure className="about__portrait reveal">
         <img
-          src="/img/steven-portrait.jpg"
+          src="/img/steven-portrait.webp"
           alt="Retrato de Steven Pelaez con camiseta polo frente a una pared con la palabra Strong"
           width="1280"
           height="1600"
@@ -155,7 +155,7 @@ export function About() {
       <div className="about__photos">
         <figure className="about__team reveal">
           <img
-            src="/img/steven-team.jpg"
+            src="/img/steven-team.webp"
             alt="Equipo de entrenadores personales de Smart Fit Unicentro, con Steven Pelaez en el centro"
             width="1600"
             height="1351"
@@ -165,7 +165,7 @@ export function About() {
         </figure>
         <figure className="about__clients reveal">
           <img
-            src="/img/steven-with-clients.jpg"
+            src="/img/steven-with-clients.webp"
             alt="Steven Pelaez con dos de sus clientas en el gimnasio"
             width="900"
             height="1010"

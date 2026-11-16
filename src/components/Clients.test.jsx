@@ -17,8 +17,8 @@ describe('Clients', () => {
   it('features Steven coaching and drops the blurry or rejected photos', () => {
     const { container } = render(<Clients />)
     const srcs = [...container.querySelectorAll('.bento img')].map((i) => i.getAttribute('src'))
-    expect(srcs[0]).toBe('/img/clients/hip-thrust.jpg')
-    expect(srcs).toContain('/img/clients/cable.jpg')
+    expect(srcs[0]).toBe('/img/clients/hip-thrust.webp')
+    expect(srcs).toContain('/img/clients/cable.webp')
     for (const gone of ['kickback', 'leg-machine', 'pullup']) {
       expect(srcs.some((s) => s.includes(gone))).toBe(false)
     }
@@ -27,9 +27,9 @@ describe('Clients', () => {
   it('shows the new Romanian deadlift in place of the squat and keeps the red-shorts deadlift', () => {
     const { container } = render(<Clients />)
     const srcs = [...container.querySelectorAll('.bento img')].map((i) => i.getAttribute('src'))
-    expect(srcs).toContain('/img/clients/rdl.jpg')
-    expect(srcs).toContain('/img/clients/red-deadlift.jpg')
-    expect(srcs).not.toContain('/img/clients/squat.jpg')
-    expect(srcs).not.toContain('/img/clients/deadlift.jpg')
+    expect(srcs).toContain('/img/clients/rdl.webp')
+    expect(srcs).toContain('/img/clients/red-deadlift.webp')
+    expect(srcs).not.toContain('/img/clients/squat.webp')
+    expect(srcs).not.toContain('/img/clients/deadlift.webp')
   })
 })

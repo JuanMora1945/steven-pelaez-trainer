@@ -51,28 +51,28 @@ export const plans = {
 export const steps = [
   {
     name: 'Valoración',
-    photo: '/img/steven-smile.jpg',
+    photo: '/img/steven-smile.webp',
     text: 'Hablamos de tu objetivo, tu historial y tus horarios. Tomamos medidas y fotos de inicio para comparar después.',
   },
   {
     name: 'Tu plan',
-    photo: '/img/process/squat.jpg',
+    photo: '/img/process/squat.webp',
     text: 'Armo tu rutina según tus días, tu nivel y el gimnasio donde entrenas. Nada de copiar la rutina de otro.',
   },
   {
     name: 'Entrenar',
-    photo: '/img/process/deadlift.jpg',
+    photo: '/img/process/deadlift.webp',
     text: 'En persona corrijo tu técnica en cada serie. Online recibes el video de cada ejercicio y me mandas los tuyos.',
   },
   {
     name: 'Seguimiento',
     video: '/video/steven-row.mp4',
-    poster: '/video/steven-row.jpg',
+    poster: '/video/steven-row.webp',
     text: 'Cada semana revisamos cargas, sensaciones y alimentación por WhatsApp. Si algo no funciona, lo cambiamos.',
   },
   {
     name: 'Resultados',
-    photo: '/img/steven-mirror.jpg',
+    photo: '/img/steven-mirror.webp',
     text: 'Cada mes comparamos medidas y fotos contra el inicio y subimos el nivel del plan.',
   },
 ]
@@ -106,8 +106,8 @@ export const faqs = [
 
 // Steven coaching his clients at Smart Fit Unicentro (photos and frames from his Instagram).
 export const clientPhotos = [
-  { src: '/img/clients/hip-thrust.jpg', label: 'Hip thrust', note: 'Steven corrige cada repetición', alt: 'Steven Pelaez acompañando a una clienta en la máquina de hip thrust' },
-  { src: '/img/clients/cable.jpg', label: 'Trabajo en polea', note: 'Técnica antes que peso', alt: 'Clienta de Steven entrenando en la polea baja' },
-  { src: '/img/clients/rdl.jpg', label: 'Peso muerto con barra', note: 'Barra pegada a las piernas', alt: 'Clienta de Steven bajando la barra en peso muerto' },
-  { src: '/img/clients/red-deadlift.jpg', label: 'Peso muerto rumano', note: 'Cadera atrás, espalda neutra', alt: 'Clienta de Steven bajando la barra en peso muerto rumano' },
+  { src: '/img/clients/hip-thrust.webp', label: 'Hip thrust', note: 'Steven corrige cada repetición', alt: 'Steven Pelaez acompañando a una clienta en la máquina de hip thrust' },
+  { src: '/img/clients/cable.webp', label: 'Trabajo en polea', note: 'Técnica antes que peso', alt: 'Clienta de Steven entrenando en la polea baja' },
+  { src: '/img/clients/rdl.webp', label: 'Peso muerto con barra', note: 'Barra pegada a las piernas', alt: 'Clienta de Steven bajando la barra en peso muerto' },
+  { src: '/img/clients/red-deadlift.webp', label: 'Peso muerto rumano', note: 'Cadera atrás, espalda neutra', alt: 'Clienta de Steven bajando la barra en peso muerto rumano' },
 ]

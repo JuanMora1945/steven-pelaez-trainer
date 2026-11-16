@@ -258,7 +258,7 @@ a {
   position: absolute;
   inset: 0;
   z-index: -2;
-  background: url('/img/hero-bg.jpg') center 30% / cover no-repeat;
+  background: url('/img/hero-bg.webp') center 30% / cover no-repeat;
   transform: scale(1.06);
 }
 

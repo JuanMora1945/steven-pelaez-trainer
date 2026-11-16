@@ -24,6 +24,6 @@ describe('Pricing photos', () => {
   it('shows Steven training on the online plan', () => {
     render(<Pricing />)
     const plan = screen.getByRole('article', { name: /asesoría online/i })
-    expect(within(plan).getByRole('img')).toHaveAttribute('src', '/img/process/curl.jpg')
+    expect(within(plan).getByRole('img')).toHaveAttribute('src', '/img/process/curl.webp')
   })
 })

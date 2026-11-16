@@ -73,3 +73,4 @@ Branch: `feat/landing` · Delivery: single PR (Juan approves push/PR) · Tests: 
 - T6: burger menu with full-screen panel, aria-expanded/controls, closes on link and Escape, locks page scroll; Clientes added to nav. Tests 35/35. Checked at 390 px closed/open.
 - T7: title "Entrenador personal en Cali | Steven Pelaez", new description, robots index/follow, JSON-LD @graph with Person + ProfessionalService (areaServed Cali/Colombia, address), H1 "Entrenador personal en Cali" (city as a smaller yellow line). Tests 38/38 (SEO test reads index.html).
 - T8: SectionCta ("Agenda tu entrenamiento", WhatsApp with a prefilled message) closing Process and Clients; footer note that the site is personal and independent, not an official Smart Fit site. Tests 40/40.
+- T9: all photos except og.jpg converted to WebP (q80, max 1200 px wide): 2.36 MB -> 0.90 MB. References updated in src and CSS; 11/11 visible images load, hero background WebP. Tests 40/40.
