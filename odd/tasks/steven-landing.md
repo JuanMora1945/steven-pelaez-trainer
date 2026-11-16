@@ -60,3 +60,4 @@ Branch: `feat/landing` · Delivery: single PR (Juan approves push/PR) · Tests: 
 - L32 (2026-11-15, Juan, verbatim): "quita eso de preguntale a steven". Removed the per-answer WhatsApp link and its styles; test now forbids it. Tests 30/30.
 - L33 (2026-11-15, Juan, verbatim): "no le hagas zoom a la foto que se vea natural". Clients grid is now four equal 2:3 portrait tiles (2 per row on tablet and phone), hover zoom removed, so photos show whole. Tests 30/30.
 - L34 (2026-11-15, Juan, verbatim): "usa esta foto mejor en el apartado de clientes en accion". Replaced the client squat photo with the fuller frame (TikTok watermark and caption removed). Tests 30/30.
+- L35 (2026-11-15, Juan, verbatim): "pon esa mejor en la seccion de clientes". Sharp Romanian deadlift photo (TikTok watermark removed with delogo) replaces the video-frame RDL tile. Tests 31/31.

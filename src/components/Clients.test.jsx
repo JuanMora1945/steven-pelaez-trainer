@@ -30,4 +30,11 @@ describe('Clients', () => {
     expect(srcs).toContain('/img/clients/squat.jpg')
     expect(srcs).not.toContain('/img/clients/deadlift.jpg')
   })
+
+  it('uses the sharp Romanian deadlift photo instead of the video frame', () => {
+    const { container } = render(<Clients />)
+    const srcs = [...container.querySelectorAll('.bento img')].map((i) => i.getAttribute('src'))
+    expect(srcs).toContain('/img/clients/rdl.jpg')
+    expect(srcs).not.toContain('/img/clients/red-deadlift.jpg')
+  })
 })
