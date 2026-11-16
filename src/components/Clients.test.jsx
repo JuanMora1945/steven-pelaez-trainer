@@ -23,4 +23,11 @@ describe('Clients', () => {
       expect(srcs.some((s) => s.includes(gone))).toBe(false)
     }
   })
+
+  it('shows the back squat instead of the conventional deadlift photo', () => {
+    const { container } = render(<Clients />)
+    const srcs = [...container.querySelectorAll('.bento img')].map((i) => i.getAttribute('src'))
+    expect(srcs).toContain('/img/clients/squat.jpg')
+    expect(srcs).not.toContain('/img/clients/deadlift.jpg')
+  })
 })

@@ -108,6 +108,6 @@ export const faqs = [
 export const clientPhotos = [
   { src: '/img/clients/hip-thrust.jpg', label: 'Hip thrust', note: 'Steven corrige cada repetición', alt: 'Steven Pelaez acompañando a una clienta en la máquina de hip thrust' },
   { src: '/img/clients/cable.jpg', label: 'Trabajo en polea', note: 'Técnica antes que peso', alt: 'Clienta de Steven entrenando en la polea baja' },
-  { src: '/img/clients/deadlift.jpg', label: 'Peso muerto', note: 'Fuerza con buena forma', alt: 'Clienta de Steven terminando un peso muerto con barra' },
+  { src: '/img/clients/squat.jpg', label: 'Sentadilla con barra', note: 'Profundidad y control', alt: 'Clienta de Steven haciendo sentadilla con barra en la espalda' },
   { src: '/img/clients/red-deadlift.jpg', label: 'Peso muerto rumano', note: 'Cadera atrás, espalda neutra', alt: 'Clienta de Steven bajando la barra en peso muerto rumano' },
 ]
