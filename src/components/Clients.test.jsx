@@ -14,11 +14,13 @@ describe('Clients', () => {
     for (const img of imgs) expect(img.getAttribute('alt')).not.toBe('')
   })
 
-  it('features the three photos of Steven coaching', () => {
+  it('features Steven coaching and drops the blurry or rejected photos', () => {
     const { container } = render(<Clients />)
     const srcs = [...container.querySelectorAll('.bento img')].map((i) => i.getAttribute('src'))
-    for (const src of ['/img/clients/kickback.jpg', '/img/clients/hip-thrust.jpg', '/img/clients/cable.jpg']) {
-      expect(srcs).toContain(src)
+    expect(srcs[0]).toBe('/img/clients/hip-thrust.jpg')
+    expect(srcs).toContain('/img/clients/cable.jpg')
+    for (const gone of ['kickback', 'leg-machine', 'pullup']) {
+      expect(srcs.some((s) => s.includes(gone))).toBe(false)
     }
   })
 })

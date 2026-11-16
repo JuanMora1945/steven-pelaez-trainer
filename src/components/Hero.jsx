@@ -52,6 +52,8 @@ export default function Hero() {
 
   return (
     <section className="hero" aria-labelledby="hero-title">
+      <div className="hero__bg" aria-hidden="true" />
+      <p className="hero__word" aria-hidden="true">STEVEN</p>
       <div className="hero__copy">
         <p className="hero__name">Steven Pelaez · Cali</p>
         <h1 id="hero-title" className="hero__title">
@@ -80,10 +82,10 @@ export default function Hero() {
 
       <figure className="hero__figure">
         <img
-          src="/img/steven-cutout.png"
-          alt="Steven Pelaez, entrenador personal, mostrando su físico"
-          width="339"
-          height="927"
+          src="/img/steven-cutout.webp"
+          alt="Steven Pelaez sonriendo y mostrando el bíceps"
+          width="960"
+          height="1100"
           fetchPriority="high"
         />
       </figure>

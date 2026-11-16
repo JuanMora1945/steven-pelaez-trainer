@@ -6,7 +6,7 @@ describe('Hero', () => {
   it('shows the h1, Steven cut out from the background and the squat figure', () => {
     const { container } = render(<Hero />)
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/entrenador personal/i)
-    expect(screen.getByRole('img', { name: /steven pelaez/i })).toHaveAttribute('src', '/img/steven-cutout.png')
+    expect(screen.getByRole('img', { name: /steven pelaez/i })).toHaveAttribute('src', '/img/steven-cutout.webp')
     expect(container.querySelector('.lifter')).not.toBeNull()
   })
 
