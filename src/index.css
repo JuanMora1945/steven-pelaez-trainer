@@ -231,6 +231,10 @@ a {
   text-decoration-color: var(--yellow);
 }
 
+.nav__toggle {
+  display: none;
+}
+
 .nav__cta {
   min-height: 46px;
   padding: 10px 20px;
@@ -1274,8 +1278,94 @@ a {
 
 /* Tablet */
 @media (max-width: 1024px) {
+  /* Mobile and tablet menu: a full-screen panel opened by the burger button */
+  .nav {
+    position: absolute;
+  }
+
+  .nav__toggle {
+    position: relative;
+    z-index: 31;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border: 0;
+    background: var(--graphite);
+    cursor: pointer;
+  }
+
+  .nav__toggle span,
+  .nav__toggle span::before,
+  .nav__toggle span::after {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    transition: transform 250ms var(--ease), background-color 250ms var(--ease);
+  }
+
+  .nav__toggle span {
+    position: relative;
+  }
+
+  .nav__toggle span::before,
+  .nav__toggle span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  .nav__toggle span::before { top: -7px; }
+  .nav__toggle span::after { top: 7px; }
+
+  .nav.is-open .nav__toggle span { background: transparent; }
+  .nav.is-open .nav__toggle span::before { transform: translateY(7px) rotate(45deg); }
+  .nav.is-open .nav__toggle span::after { transform: translateY(-7px) rotate(-45deg); }
+
   .nav__links {
-    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    padding: 96px 24px 40px;
+    background: var(--black);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-12px);
+    transition: opacity 250ms var(--ease), transform 250ms var(--ease), visibility 0s linear 250ms;
+  }
+
+  .nav.is-open .nav__links {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: opacity 250ms var(--ease), transform 250ms var(--ease);
+  }
+
+  .nav__links a {
+    display: block;
+    padding: 10px 0;
+    font-family: var(--display);
+    font-weight: 900;
+    font-size: clamp(2.5rem, 9vw, 3.5rem);
+    line-height: 1;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .nav__mark,
+  .nav__cta {
+    position: relative;
+    z-index: 31;
+  }
+
+  .menu-open body {
+    overflow: hidden;
   }
 
   .pricing__grid {

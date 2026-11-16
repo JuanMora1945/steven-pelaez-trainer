@@ -6,23 +6,57 @@ const YEAR = new Date().getFullYear()
 
 const hello = buildWhatsAppLink('Hola Steven, vi tu página y quiero empezar a entrenar contigo.')
 
+const navLinks = [
+  ['#planes', 'Planes'],
+  ['#proceso', 'Proceso'],
+  ['#clientes', 'Clientes'],
+  ['#sobre', 'Sobre mí'],
+  ['#preguntas', 'Preguntas'],
+]
+
 export function Nav() {
+  const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    if (!open) return undefined
+    const onKey = (e) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('keydown', onKey)
+    document.documentElement.classList.add('menu-open')
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.documentElement.classList.remove('menu-open')
+    }
+  }, [open])
+
   return (
-    <header className="nav">
+    <header className={`nav${open ? ' is-open' : ''}`}>
       <a className="nav__mark" href="#top">
         Steven Pelaez <span>Trainer</span>
       </a>
       <nav aria-label="Principal">
-        <ul className="nav__links">
-          <li><a href="#planes">Planes</a></li>
-          <li><a href="#proceso">Proceso</a></li>
-          <li><a href="#sobre">Sobre mí</a></li>
-          <li><a href="#preguntas">Preguntas</a></li>
+        <ul className="nav__links" id="menu-principal">
+          {navLinks.map(([href, label]) => (
+            <li key={href}>
+              <a href={href} onClick={() => setOpen(false)}>{label}</a>
+            </li>
+          ))}
         </ul>
       </nav>
       <a className="button button--yellow nav__cta" href={hello} target="_blank" rel="noopener noreferrer">
         WhatsApp
       </a>
+      <button
+        type="button"
+        className="nav__toggle"
+        aria-expanded={open}
+        aria-controls="menu-principal"
+        aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
+        onClick={() => setOpen((v) => !v)}
+      >
+        <span aria-hidden="true" />
+      </button>
     </header>
   )
 }
