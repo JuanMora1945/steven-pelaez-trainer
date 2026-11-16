@@ -366,6 +366,15 @@ a {
   transition: translate 500ms var(--ease);
 }
 
+/* Touch screens: the drift is the only motion, so it travels a bit further. */
+@media (pointer: coarse) {
+  .hero__figure,
+  .hero__stripe {
+    translate: calc(var(--mx, 0) * -56px * var(--depth)) calc(var(--my, 0) * -30px * var(--depth));
+    transition: none;
+  }
+}
+
 /* Spotlight: follows the pointer on desktop, drifts on its own elsewhere. */
 .hero__glow {
   position: absolute;
@@ -1213,10 +1222,6 @@ a {
   from { opacity: 0; transform: translateY(18%); }
 }
 
-@keyframes glow-drift {
-  0%, 100% { --mx: -0.25; --my: -0.1; }
-  50% { --mx: 0.2; --my: 0.15; }
-}
 
 @keyframes photo-in {
   from { opacity: 0; transform: translateX(40px); }
@@ -1375,10 +1380,6 @@ a {
     width: calc(100% + 16px);
     height: 50svh;
     margin-right: -16px;
-  }
-
-  .hero__glow {
-    animation: glow-drift 9s ease-in-out infinite;
   }
 
   .hero__copy {

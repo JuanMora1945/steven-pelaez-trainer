@@ -24,4 +24,16 @@ describe('Hero', () => {
     expect(ig).toHaveAttribute('href', 'https://www.instagram.com/stevenpelaez.trainer/')
     expect(ig.querySelector('svg')).not.toBeNull()
   })
+
+  it('moves Steven and the stripes on touch screens too (no mouse)', async () => {
+    const original = window.matchMedia
+    window.matchMedia = (q) => ({ matches: q.includes('coarse'), media: q, addEventListener() {}, removeEventListener() {} })
+    const { container } = render(<Hero />)
+    await new Promise((r) => setTimeout(r, 250))
+    const hero = container.querySelector('.hero')
+    const mx = Number(hero.style.getPropertyValue('--mx'))
+    const my = Number(hero.style.getPropertyValue('--my'))
+    window.matchMedia = original
+    expect(Math.abs(mx) + Math.abs(my)).toBeGreaterThan(0)
+  })
 })
