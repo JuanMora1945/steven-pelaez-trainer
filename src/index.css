@@ -1700,10 +1700,14 @@ a {
     font-size: 0.9375rem;
   }
 
-  /* Process: landscape media instead of a tall portrait */
+  /* Process: show each photo or clip whole, never cropped; tall ones are capped and letterboxed */
   .stage__video {
-    aspect-ratio: 16 / 10;
-    object-position: 50% 30%;
+    aspect-ratio: auto;
+    width: 100%;
+    height: auto;
+    max-height: 68svh;
+    object-fit: contain;
+    background: var(--black);
   }
 
   .stage__tab {
