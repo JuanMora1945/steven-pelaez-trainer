@@ -79,9 +79,9 @@ export default function Hero() {
     <section className="hero" ref={root} aria-labelledby="hero-title">
       <div className="hero__bg" aria-hidden="true" />
       <div className="hero__copy">
-        <p className="hero__name">Steven Pelaez · Cali</p>
+        <p className="hero__name">Steven Pelaez</p>
         <h1 id="hero-title" className="hero__title">
-          Entrenador personal
+          Entrenador personal <span className="hero__city">en Cali</span>
         </h1>
         <p className="hero__lead">
           Entrena conmigo en Smart Fit Unicentro o recibe tu plan online, desde cualquier ciudad. Técnica, constancia y

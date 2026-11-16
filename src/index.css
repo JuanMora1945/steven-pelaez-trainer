@@ -297,6 +297,14 @@ a {
   max-width: 8ch;
 }
 
+.hero__city {
+  display: block;
+  margin-top: 0.12em;
+  font-size: 0.42em;
+  line-height: 1;
+  color: var(--yellow);
+}
+
 .hero__lead {
   margin-top: 26px;
   font-size: var(--step-lead);

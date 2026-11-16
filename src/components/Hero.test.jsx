@@ -5,7 +5,7 @@ import Hero from './Hero'
 describe('Hero', () => {
   it('shows the h1 and Steven cut out from the background', () => {
     render(<Hero />)
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/entrenador personal/i)
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/entrenador personal en cali/i)
     expect(screen.getByRole('img', { name: /steven pelaez/i })).toHaveAttribute('src', '/img/steven-cutout.webp')
   })
 

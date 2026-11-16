@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Steven Pelaez | Entrenador personal en Cali y asesorías online</title>
-    <meta name="description" content="Entrenador personal en Smart Fit Unicentro, Cali, y asesorías online. Planes para bajar grasa, ganar masa muscular, fuerza y movilidad. Arma tu plan y escríbele por WhatsApp." />
+    <title>Entrenador personal en Cali | Steven Pelaez</title>
+    <meta name="description" content="Entrenamiento personalizado en Cali con Steven Pelaez, en Smart Fit Unicentro, y asesorías online. Planes para bajar grasa, ganar masa muscular, fuerza y movilidad. Escríbele por WhatsApp." />
+    <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://steven-pelaez-trainer.pages.dev/" />
     <meta name="theme-color" content="#0e0e0f" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -12,7 +13,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_CO" />
     <meta property="og:site_name" content="Steven Pelaez Trainer" />
-    <meta property="og:title" content="Steven Pelaez | Entrenador personal en Cali y online" />
+    <meta property="og:title" content="Entrenador personal en Cali | Steven Pelaez" />
     <meta property="og:description" content="Entrenamiento presencial en Smart Fit Unicentro, Cali, y asesorías online desde cualquier ciudad." />
     <meta property="og:url" content="https://steven-pelaez-trainer.pages.dev/" />
     <meta property="og:image" content="https://steven-pelaez-trainer.pages.dev/img/og.jpg" />
@@ -27,26 +28,42 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Steven Pelaez",
-        "jobTitle": "Entrenador personal",
-        "url": "https://steven-pelaez-trainer.pages.dev/",
-        "sameAs": ["https://www.instagram.com/stevenpelaez.trainer/"],
-        "alumniOf": { "@type": "EducationalOrganization", "name": "Escuela Nacional del Deporte" },
-        "worksFor": {
-          "@type": "ExerciseGym",
-          "name": "Smart Fit Unicentro",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "C.C. Unicentro, Cra. 100 #5-169",
-            "addressLocality": "Cali",
-            "addressRegion": "Valle del Cauca",
-            "addressCountry": "CO"
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://steven-pelaez-trainer.pages.dev/#steven",
+            "name": "Steven Pelaez",
+            "jobTitle": "Entrenador personal",
+            "url": "https://steven-pelaez-trainer.pages.dev/",
+            "image": "https://steven-pelaez-trainer.pages.dev/img/og.jpg",
+            "sameAs": ["https://www.instagram.com/stevenpelaez.trainer/"],
+            "alumniOf": { "@type": "EducationalOrganization", "name": "Escuela Nacional del Deporte" }
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://steven-pelaez-trainer.pages.dev/#service",
+            "name": "Steven Pelaez · Entrenador personal en Cali",
+            "description": "Entrenamiento personal presencial en Smart Fit Unicentro, Cali, y asesorías de entrenamiento online.",
+            "url": "https://steven-pelaez-trainer.pages.dev/",
+            "image": "https://steven-pelaez-trainer.pages.dev/img/og.jpg",
+            "founder": { "@id": "https://steven-pelaez-trainer.pages.dev/#steven" },
+            "areaServed": [
+              { "@type": "City", "name": "Cali" },
+              { "@type": "Country", "name": "Colombia" }
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "C.C. Unicentro, Cra. 100 #5-169",
+              "addressLocality": "Cali",
+              "addressRegion": "Valle del Cauca",
+              "addressCountry": "CO"
+            },
+            "sameAs": ["https://www.instagram.com/stevenpelaez.trainer/"],
+            "makesOffer": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Entrenamiento personal presencial en Cali" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Asesoría de entrenamiento online" } }
+            ]
           }
-        },
-        "makesOffer": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Entrenamiento personal presencial", "areaServed": "Cali" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Asesoría de entrenamiento online", "areaServed": "CO" } }
         ]
       }
     </script>
