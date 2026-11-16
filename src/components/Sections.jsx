@@ -118,16 +118,28 @@ export function About() {
           aseguramos la técnica; después ajustamos el plan a tu ritmo, tus horarios y tu objetivo.
         </p>
       </div>
-      <figure className="about__team reveal">
-        <img
-          src="/img/steven-team.jpg"
-          alt="Equipo de entrenadores personales de Smart Fit Unicentro, con Steven Pelaez en el centro"
-          width="1600"
-          height="1351"
-          loading="lazy"
-        />
-        <figcaption>Equipo PT Smart Fit Unicentro.</figcaption>
-      </figure>
+      <div className="about__photos">
+        <figure className="about__team reveal">
+          <img
+            src="/img/steven-team.jpg"
+            alt="Equipo de entrenadores personales de Smart Fit Unicentro, con Steven Pelaez en el centro"
+            width="1600"
+            height="1351"
+            loading="lazy"
+          />
+          <figcaption>Equipo PT Smart Fit Unicentro.</figcaption>
+        </figure>
+        <figure className="about__clients reveal">
+          <img
+            src="/img/steven-with-clients.jpg"
+            alt="Steven Pelaez con dos de sus clientas en el gimnasio"
+            width="900"
+            height="1010"
+            loading="lazy"
+          />
+          <figcaption>Con sus clientas en Smart Fit Unicentro.</figcaption>
+        </figure>
+      </div>
     </section>
   )
 }

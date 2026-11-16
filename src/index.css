@@ -898,13 +898,13 @@ a {
 
 .about__portrait {
   grid-row: 1 / span 2;
-  align-self: start;
+  align-self: stretch;
 }
 
 .about__portrait img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 5;
+  height: 100%;
+  min-height: 560px;
   object-fit: cover;
   object-position: 50% 25%;
 }
@@ -931,19 +931,27 @@ a {
   color: var(--yellow);
 }
 
-.about__team {
+.about__photos {
   grid-column: 2;
   align-self: end;
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 12px;
 }
 
-.about__team img {
+.about__team img,
+.about__clients img {
   width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
+  height: clamp(300px, 30vw, 440px);
   object-fit: cover;
   object-position: 50% 30%;
 }
 
+.about__team img {
+  object-position: 50% 45%;
+}
+
+.about__clients figcaption,
 .about__team figcaption {
   margin-top: 10px;
   font-size: var(--step-small);
@@ -1188,16 +1196,31 @@ a {
     grid-row: auto;
   }
 
-  .about__team {
+  .about__photos {
     grid-column: 1;
   }
 
   .about__portrait img {
+    height: auto;
+    min-height: 0;
     aspect-ratio: 1 / 1;
+  }
+
+  .about__photos {
+    grid-template-columns: 1fr;
   }
 
   .about__team img {
     aspect-ratio: 4 / 3;
+  }
+
+  .about__team img,
+  .about__clients img {
+    height: auto;
+  }
+
+  .about__clients img {
+    aspect-ratio: 4 / 5;
   }
 }
 

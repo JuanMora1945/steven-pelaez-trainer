@@ -13,4 +13,12 @@ describe('About', () => {
     const { container } = render(<About />)
     expect(container.textContent).not.toMatch(/suplement/i)
   })
+
+  it('shows Steven with two of his clients next to the team photo', () => {
+    render(<About />)
+    expect(screen.getByRole('img', { name: /steven pelaez con dos de sus clientas/i })).toHaveAttribute(
+      'src',
+      '/img/steven-with-clients.jpg',
+    )
+  })
 })
