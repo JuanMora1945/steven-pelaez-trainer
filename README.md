@@ -1,16 +1,34 @@
-# React + Vite
+# Steven Pelaez · Personal trainer landing page
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Landing page for Steven Pelaez, personal trainer at Smart Fit Unicentro (Cali, Colombia) who also coaches online.
 
-Currently, two official plugins are available:
+**Live:** https://steven-pelaez-trainer.pages.dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Hero with Steven cut out of his photo, pointer parallax and diagonal stripes.
+- "Arma tu plan": pick mode, goal and days; the WhatsApp message to Steven writes itself.
+- Process accordion, client photo grid (swipe carousel on phones), FAQ accordion.
+- WhatsApp contact by username (`wa.me/stevenpelaez_13`), floating button.
+- SEO: meta and Open Graph tags, JSON-LD (`Person` + `ExerciseGym`), sitemap and robots.
+- Responsive from 360 px, respects `prefers-reduced-motion`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Stack
 
-## Expanding the Oxlint configuration
+React 19 · Vite · Vitest + Testing Library · plain CSS · Cloudflare Pages.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Run it
+
+```bash
+pnpm install
+pnpm dev        # local server
+pnpm test       # unit and component tests
+pnpm build      # production build in dist/
+```
+
+Content (plans, steps, FAQ, client photos) lives in `src/data/content.js`.
+
+## Credits
+
+Photos and clips: [@stevenpelaez.trainer](https://www.instagram.com/stevenpelaez.trainer/).
+Built by [Juan Mora](https://github.com/JuanMora1945).

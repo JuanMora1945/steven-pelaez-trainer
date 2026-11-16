@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://steven-pelaez-trainer.netlify.app/sitemap.xml
+Sitemap: https://steven-pelaez-trainer.pages.dev/sitemap.xml
