@@ -1,33 +1,26 @@
-import { lifterPose } from '../lib/lifterPose'
+import { squatPose } from '../lib/squatPose'
 
-// A line-art athlete doing an overhead press, drawn from lifterPose().
-const line = (a, b) => `M${a.x.toFixed(1)} ${a.y.toFixed(1)}L${b.x.toFixed(1)} ${b.y.toFixed(1)}`
+// A sports-pictogram athlete doing a back squat, seen from the side.
+const pt = (p) => `${p.x.toFixed(1)} ${p.y.toFixed(1)}`
+const lerp = (a, b, t) => ({ x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t })
 
-export default function Lifter({ progress = 0, className = '' }) {
-  const { barY, left, right, headY } = lifterPose(progress)
-  const arm = (a) => `${line(a.shoulder, a.elbow)}${line(a.elbow, a.hand)}`
+export default function Lifter({ depth = 0, className = '' }) {
+  const { ankle, knee, hip, shoulder, bar, head, elbow, hand } = squatPose(depth)
+  const shortsEnd = lerp(hip, knee, 0.45)
 
   return (
     <svg className={`lifter ${className}`} viewBox="0 0 200 250" aria-hidden="true" focusable="false">
-      <ellipse className="lifter__shadow" cx="100" cy="238" rx="58" ry="6" />
-      {/* legs: thighs and calves as thick rounded strokes */}
-      <path className="lifter__limb lifter__limb--leg" d="M89 146 L84 190 L83 228 M111 146 L116 190 L117 228" />
-      <path className="lifter__foot" d="M74 232 H92 M108 232 H126" />
-      {/* shorts */}
-      <path className="lifter__shorts" d="M78 134 H122 L126 168 H104 L100 152 L96 168 H74 Z" />
-      {/* V-shaped torso */}
-      <path className="lifter__torso" d="M74 72 Q100 64 126 72 L118 136 H82 Z" />
-      {/* neck and head */}
-      <rect className="lifter__torso" x="94" y="58" width="12" height="14" rx="4" />
-      <circle className="lifter__torso" cx="100" cy={headY} r="12.5" />
-      {/* arms */}
-      <path className="lifter__limb lifter__limb--arm" d={`${arm(left)} ${arm(right)}`} />
-      {/* barbell, in front of the face as in a real press */}
-      <line className="lifter__bar" x1="20" y1={barY} x2="180" y2={barY} />
-      <rect className="lifter__plate" x="20" y={barY - 20} width="11" height="40" rx="2" />
-      <rect className="lifter__plate lifter__plate--small" x="33" y={barY - 14} width="6" height="28" rx="2" />
-      <rect className="lifter__plate" x="169" y={barY - 20} width="11" height="40" rx="2" />
-      <rect className="lifter__plate lifter__plate--small" x="161" y={barY - 14} width="6" height="28" rx="2" />
+      <ellipse className="lifter__shadow" cx="100" cy="236" rx="56" ry="5" />
+      {/* the barbell seen end-on: one plate behind the athlete's neck, drawn first */}
+      <circle className="lifter__plate" cx={bar.x} cy={bar.y} r="21" />
+      <circle className="lifter__plate-ring" cx={bar.x} cy={bar.y} r="10" />
+      <circle className="lifter__sleeve" cx={bar.x} cy={bar.y} r="4.5" />
+      <path className="lifter__foot" d={`M${ankle.x - 5} 232 H${ankle.x + 20}`} />
+      <path className="lifter__limb lifter__limb--leg" d={`M${pt(ankle)} L${pt(knee)} L${pt(hip)}`} />
+      <path className="lifter__shorts" d={`M${pt(hip)} L${pt(shortsEnd)}`} />
+      <path className="lifter__limb lifter__limb--torso" d={`M${pt(hip)} L${pt(shoulder)}`} />
+      <circle className="lifter__skin" cx={head.x} cy={head.y} r="12" />
+      <path className="lifter__limb lifter__limb--arm" d={`M${pt(shoulder)} L${pt(elbow)} L${pt(hand)}`} />
     </svg>
   )
 }

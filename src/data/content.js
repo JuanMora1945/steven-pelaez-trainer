@@ -61,12 +61,13 @@ export const steps = [
   },
   {
     name: 'Entrenar',
-    photo: '/img/process/coach-bench.jpg',
+    photo: '/img/process/deadlift.jpg',
     text: 'En persona corrijo tu técnica en cada serie. Online recibes el video de cada ejercicio y me mandas los tuyos.',
   },
   {
     name: 'Seguimiento',
-    photo: '/img/process/row.jpg',
+    video: '/video/steven-row.mp4',
+    poster: '/video/steven-row.jpg',
     text: 'Cada semana revisamos cargas, sensaciones y alimentación por WhatsApp. Si algo no funciona, lo cambiamos.',
   },
   {
@@ -103,10 +104,12 @@ export const faqs = [
   },
 ]
 
-// Frames of Steven's clients training, taken from his Instagram reels.
+// Steven coaching his clients at Smart Fit Unicentro (photos and frames from his Instagram).
 export const clientPhotos = [
-  { src: '/img/clients/deadlift.jpg', label: 'Peso muerto', alt: 'Clienta de Steven terminando un peso muerto con barra' },
-  { src: '/img/clients/pullup.jpg', label: 'Dominadas', alt: 'Clienta de Steven haciendo dominadas' },
-  { src: '/img/clients/red-deadlift.jpg', label: 'Peso muerto rumano', alt: 'Clienta de Steven bajando la barra en peso muerto rumano' },
-  { src: '/img/clients/leg-machine.jpg', label: 'Tren inferior', alt: 'Clienta de Steven sonriendo en una máquina de pierna' },
+  { src: '/img/clients/kickback.jpg', label: 'Patada de glúteo', note: 'Steven guía el rango y la postura', alt: 'Steven Pelaez corrigiendo a una clienta en una patada de glúteo sobre banco' },
+  { src: '/img/clients/hip-thrust.jpg', label: 'Hip thrust', note: 'Corrección en cada repetición', alt: 'Steven Pelaez acompañando a una clienta en la máquina de hip thrust' },
+  { src: '/img/clients/cable.jpg', label: 'Trabajo en polea', note: 'Técnica antes que peso', alt: 'Clienta de Steven entrenando en la polea baja' },
+  { src: '/img/clients/deadlift.jpg', label: 'Peso muerto', note: 'Fuerza con buena forma', alt: 'Clienta de Steven terminando un peso muerto con barra' },
+  { src: '/img/clients/leg-machine.jpg', label: 'Tren inferior', note: 'Sesiones que se disfrutan', alt: 'Clienta de Steven sonriendo en una máquina de pierna' },
+  { src: '/img/clients/pullup.jpg', label: 'Dominadas', note: 'Progreso que se nota', alt: 'Clienta de Steven haciendo dominadas' },
 ]

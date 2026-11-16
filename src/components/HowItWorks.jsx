@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { steps } from '../data/content'
+import LazyVideo from './LazyVideo'
 
 export default function HowItWorks() {
   const [open, setOpen] = useState(0)
@@ -31,7 +32,15 @@ export default function HowItWorks() {
               <div id={`stage-${i}`} className="stage__body" hidden={!isOpen}>
                 <p>{step.text}</p>
               </div>
-              {isOpen && (
+              {isOpen && step.video && (
+                <LazyVideo
+                  className="stage__video"
+                  src={step.video}
+                  poster={step.poster}
+                  label={`Steven Pelaez entrenando: ${step.name}`}
+                />
+              )}
+              {isOpen && !step.video && (
                 <img
                   className="stage__video"
                   src={step.photo}

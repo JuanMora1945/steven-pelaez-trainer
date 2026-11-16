@@ -15,9 +15,12 @@ describe('HowItWorks', () => {
     expect(screen.getAllByRole('button', { expanded: true })).toHaveLength(1)
   })
 
-  it('shows a photo in the open stage instead of a video', () => {
+  it('shows the deadlift photo in "Entrenar" and the row video in "Seguimiento"', async () => {
+    const user = userEvent.setup()
     const { container } = render(<HowItWorks />)
-    expect(container.querySelector('video')).toBeNull()
-    expect(container.querySelector('.stage.is-open img')).not.toBeNull()
+    await user.click(screen.getByRole('button', { name: /entrenar/i }))
+    expect(container.querySelector('.stage.is-open img').getAttribute('src')).toBe('/img/process/deadlift.jpg')
+    await user.click(screen.getByRole('button', { name: /seguimiento/i }))
+    expect(container.querySelector('.stage.is-open video').getAttribute('src')).toBe('/video/steven-row.mp4')
   })
 })

@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import Clients from './components/Clients'
 import Faq from './components/Faq'
+import FloatingWhatsApp from './components/FloatingWhatsApp'
 import Hero from './components/Hero'
 import HowItWorks from './components/HowItWorks'
 import PlanBuilder from './components/PlanBuilder'
@@ -51,6 +52,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </>
   )
 }

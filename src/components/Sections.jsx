@@ -110,13 +110,12 @@ export function About() {
         <h2 id="about-title" className="head reveal">Sobre Steven</h2>
         <blockquote className="about__quote reveal">«Aquí no le bajamos.»</blockquote>
         <p className="reveal">
-          Soy egresado de la Escuela Nacional del Deporte y hago parte del equipo de entrenadores personales de Smart Fit
-          Unicentro, en Cali. Trabajo con personas que empiezan de cero y con quienes llevan años entrenando y se
-          estancaron.
+          Soy entrenador personal, egresado de la Escuela Nacional del Deporte, y hago parte del equipo de entrenadores
+          de Smart Fit Unicentro, en Cali.
         </p>
         <p className="reveal">
-          Técnica primero, carga después. Planes que se ajustan a tu vida y no al revés. Si un suplemento tiene sentido para
-          tu objetivo, también te asesoro con eso.
+          Acompaño tanto a quienes están empezando como a quienes ya entrenan y quieren volver a progresar. Primero
+          aseguramos la técnica; después ajustamos el plan a tu ritmo, tus horarios y tu objetivo.
         </p>
       </div>
       <figure className="about__team reveal">

@@ -1,25 +1,36 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
+import { contact } from '../data/content'
 import Lifter from './Lifter'
 
-// Hero inspired by classic gym landing pages: big title on the left, Steven on the right,
-// and a line-art athlete that presses the bar overhead as the visitor scrolls.
+const REP_PX = 420 // scroll distance for one full squat (down and up)
+
+function InstagramIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" />
+      <circle cx="12" cy="12" r="4.5" />
+      <circle cx="17.4" cy="6.6" r="1.2" className="fill" />
+    </svg>
+  )
+}
+
+// Hero after the gym-template reference: big title on the left, Steven cut out on the right,
+// and a pictogram athlete that squats with the bar on his back as the visitor scrolls.
 export default function Hero() {
-  const root = useRef(null)
   const [reduce] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches)
-  const [progress, setProgress] = useState(() => (reduce ? 1 : 0))
+  const [depth, setDepth] = useState(0)
 
   useEffect(() => {
-    const section = root.current
-    if (!section || reduce) return undefined
-
-    // One demo rep on load, so visitors see the figure can move.
+    if (reduce) return undefined
     let frame = 0
     let demo = true
+
+    // One demo rep on load so visitors notice the figure moves.
     const t0 = performance.now()
     const demoStep = (now) => {
       if (!demo) return
-      const t = Math.min((now - t0) / 1800, 1)
-      setProgress(Math.sin(t * Math.PI) * 0.9)
+      const t = Math.min((now - t0) / 1600, 1)
+      setDepth(Math.sin(t * Math.PI))
       if (t < 1) frame = requestAnimationFrame(demoStep)
     }
     frame = requestAnimationFrame(demoStep)
@@ -28,8 +39,7 @@ export default function Hero() {
       demo = false
       cancelAnimationFrame(frame)
       frame = requestAnimationFrame(() => {
-        const travel = section.offsetHeight * 0.55 || 1
-        setProgress(Math.min(Math.max(window.scrollY / travel, 0), 1))
+        setDepth((1 - Math.cos((2 * Math.PI * window.scrollY) / REP_PX)) / 2)
       })
     }
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -41,7 +51,7 @@ export default function Hero() {
   }, [reduce])
 
   return (
-    <section className="hero" ref={root} aria-labelledby="hero-title">
+    <section className="hero" aria-labelledby="hero-title">
       <div className="hero__copy">
         <p className="hero__name">Steven Pelaez · Cali</p>
         <h1 id="hero-title" className="hero__title">
@@ -53,27 +63,33 @@ export default function Hero() {
         </p>
         <div className="hero__actions">
           <a className="button button--yellow" href="#plan">Arma tu plan</a>
-          <p className="hero__proof">
-            <strong>+5.000</strong> seguidores en Instagram
-          </p>
+          <a
+            className="hero__ig"
+            href={contact.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram de Steven: más de 5.000 seguidores"
+          >
+            <InstagramIcon />
+            <span>
+              <strong>+5.000</strong> seguidores
+            </span>
+          </a>
         </div>
       </div>
 
-      <figure className="hero__photo">
+      <figure className="hero__figure">
         <img
-          src="/img/steven-mirror.jpg"
-          alt="Steven Pelaez en el gimnasio mostrando su físico"
-          width="1012"
-          height="1400"
+          src="/img/steven-cutout.png"
+          alt="Steven Pelaez, entrenador personal, mostrando su físico"
+          width="339"
+          height="927"
           fetchPriority="high"
         />
       </figure>
 
       <div className="hero__lifter">
-        <Lifter progress={progress} />
-        <p className="hero__lifter-text" aria-hidden="true">
-          {progress > 0.95 ? '¡Arriba!' : 'Desliza y levanta'}
-        </p>
+        <Lifter depth={depth} />
       </div>
     </section>
   )

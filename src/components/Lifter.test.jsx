@@ -1,29 +1,40 @@
 import { render } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 import Lifter from './Lifter'
-import { lifterPose } from '../lib/lifterPose'
+import { SEGMENTS, squatPose } from '../lib/squatPose'
 
-describe('lifterPose', () => {
-  it('holds the bar at the shoulders at the start and overhead at the end', () => {
-    const start = lifterPose(0)
-    const end = lifterPose(1)
-    expect(end.barY).toBeLessThan(start.barY - 40)
+const dist = (a, b) => Math.hypot(a.x - b.x, a.y - b.y)
+
+describe('squatPose', () => {
+  it('stands tall at depth 0 and drops the hips at depth 1', () => {
+    const top = squatPose(0)
+    const bottom = squatPose(1)
+    expect(bottom.hip.y).toBeGreaterThan(top.hip.y + 40)
+    expect(bottom.bar.y).toBeGreaterThan(top.bar.y + 30)
   })
 
-  it('keeps both arm segments the same length in every pose', () => {
-    for (const p of [0, 0.25, 0.5, 0.75, 1]) {
-      const { left } = lifterPose(p)
-      const upper = Math.hypot(left.elbow.x - left.shoulder.x, left.elbow.y - left.shoulder.y)
-      const fore = Math.hypot(left.hand.x - left.elbow.x, left.hand.y - left.elbow.y)
-      expect(upper).toBeCloseTo(fore, 1)
+  it('keeps shin, thigh and torso lengths in every pose', () => {
+    for (const d of [0, 0.3, 0.6, 1]) {
+      const p = squatPose(d)
+      expect(dist(p.ankle, p.knee)).toBeCloseTo(SEGMENTS.shin, 1)
+      expect(dist(p.knee, p.hip)).toBeCloseTo(SEGMENTS.thigh, 1)
+      expect(dist(p.hip, p.shoulder)).toBeCloseTo(SEGMENTS.torso, 1)
+    }
+  })
+
+  it('keeps the bar over the foot so the squat looks balanced', () => {
+    for (const d of [0, 0.5, 1]) {
+      const { bar, ankle } = squatPose(d)
+      expect(bar.x).toBeGreaterThan(ankle.x - 12)
+      expect(bar.x).toBeLessThan(ankle.x + 30)
     }
   })
 })
 
 describe('Lifter', () => {
-  it('draws the bar at the height of the given progress', () => {
-    const { container } = render(<Lifter progress={1} />)
-    const bar = container.querySelector('.lifter__bar')
-    expect(Number(bar.getAttribute('y1'))).toBeCloseTo(lifterPose(1).barY, 1)
+  it('draws the barbell plate at the bar position for the given depth', () => {
+    const { container } = render(<Lifter depth={1} />)
+    const plate = container.querySelector('.lifter__plate')
+    expect(Number(plate.getAttribute('cy'))).toBeCloseTo(squatPose(1).bar.y, 1)
   })
 })

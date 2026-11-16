@@ -8,4 +8,9 @@ describe('About', () => {
     expect(screen.getByRole('img', { name: /retrato de steven pelaez/i })).toHaveAttribute('src', '/img/steven-portrait.jpg')
     expect(screen.getByRole('img', { name: /equipo de entrenadores/i })).toHaveAttribute('src', '/img/steven-team.jpg')
   })
+
+  it('no longer talks about supplements', () => {
+    const { container } = render(<About />)
+    expect(container.textContent).not.toMatch(/suplement/i)
+  })
 })
