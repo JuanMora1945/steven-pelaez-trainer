@@ -56,7 +56,7 @@ export const steps = [
   },
   {
     name: 'Tu plan',
-    photo: '/img/process/curl.jpg',
+    photo: '/img/process/squat.jpg',
     text: 'Armo tu rutina según tus días, tu nivel y el gimnasio donde entrenas. Nada de copiar la rutina de otro.',
   },
   {
@@ -72,7 +72,7 @@ export const steps = [
   },
   {
     name: 'Resultados',
-    photo: '/img/process/squat.jpg',
+    photo: '/img/steven-mirror.jpg',
     text: 'Cada mes comparamos medidas y fotos contra el inicio y subimos el nivel del plan.',
   },
 ]

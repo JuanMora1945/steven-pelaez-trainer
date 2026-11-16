@@ -23,4 +23,11 @@ describe('HowItWorks', () => {
     await user.click(screen.getByRole('button', { name: /seguimiento/i }))
     expect(container.querySelector('.stage.is-open video').getAttribute('src')).toBe('/video/steven-row.mp4')
   })
+
+  it('shows the mirror photo in "Resultados"', async () => {
+    const user = userEvent.setup()
+    const { container } = render(<HowItWorks />)
+    await user.click(screen.getByRole('button', { name: /resultados/i }))
+    expect(container.querySelector('.stage.is-open img').getAttribute('src')).toBe('/img/steven-mirror.jpg')
+  })
 })

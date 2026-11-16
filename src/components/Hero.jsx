@@ -1,8 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { contact } from '../data/content'
-import Lifter from './Lifter'
-
-const REP_PX = 420 // scroll distance for one full squat (down and up)
 
 function InstagramIcon() {
   return (
@@ -14,46 +11,45 @@ function InstagramIcon() {
   )
 }
 
-// Hero after the gym-template reference: big title on the left, Steven cut out on the right,
-// and a pictogram athlete that squats with the bar on his back as the visitor scrolls.
+// Hero after the gym-template reference: Steven cut out over his blurred gym.
+// A yellow spotlight follows the pointer and the layers shift in depth as it moves.
 export default function Hero() {
-  const [reduce] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches)
-  const [depth, setDepth] = useState(0)
+  const root = useRef(null)
 
   useEffect(() => {
-    if (reduce) return undefined
+    const section = root.current
+    if (!section) return undefined
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const finePointer = window.matchMedia('(pointer: fine)').matches
+    if (reduce || !finePointer) return undefined
+
     let frame = 0
-    let demo = true
-
-    // One demo rep on load so visitors notice the figure moves.
-    const t0 = performance.now()
-    const demoStep = (now) => {
-      if (!demo) return
-      const t = Math.min((now - t0) / 1600, 1)
-      setDepth(Math.sin(t * Math.PI))
-      if (t < 1) frame = requestAnimationFrame(demoStep)
-    }
-    frame = requestAnimationFrame(demoStep)
-
-    const onScroll = () => {
-      demo = false
+    const onMove = (e) => {
       cancelAnimationFrame(frame)
       frame = requestAnimationFrame(() => {
-        setDepth((1 - Math.cos((2 * Math.PI * window.scrollY) / REP_PX)) / 2)
+        const r = section.getBoundingClientRect()
+        const x = (e.clientX - r.left) / r.width - 0.5
+        const y = (e.clientY - r.top) / r.height - 0.5
+        section.style.setProperty('--mx', x.toFixed(3))
+        section.style.setProperty('--my', y.toFixed(3))
       })
     }
-    window.addEventListener('scroll', onScroll, { passive: true })
+    const onLeave = () => {
+      section.style.setProperty('--mx', '0')
+      section.style.setProperty('--my', '0')
+    }
+    section.addEventListener('pointermove', onMove)
+    section.addEventListener('pointerleave', onLeave)
     return () => {
-      demo = false
-      window.removeEventListener('scroll', onScroll)
+      section.removeEventListener('pointermove', onMove)
+      section.removeEventListener('pointerleave', onLeave)
       cancelAnimationFrame(frame)
     }
-  }, [reduce])
+  }, [])
 
   return (
-    <section className="hero" aria-labelledby="hero-title">
+    <section className="hero" ref={root} aria-labelledby="hero-title">
       <div className="hero__bg" aria-hidden="true" />
-      <p className="hero__word" aria-hidden="true">STEVEN</p>
       <div className="hero__copy">
         <p className="hero__name">Steven Pelaez · Cali</p>
         <h1 id="hero-title" className="hero__title">
@@ -80,18 +76,19 @@ export default function Hero() {
         </div>
       </div>
 
-      <figure className="hero__figure">
-        <img
-          src="/img/steven-cutout.webp"
-          alt="Steven Pelaez sonriendo y mostrando el bíceps"
-          width="960"
-          height="1100"
-          fetchPriority="high"
-        />
-      </figure>
-
-      <div className="hero__lifter">
-        <Lifter depth={depth} />
+      <div className="hero__stage">
+        <div className="hero__glow" aria-hidden="true" />
+        <span className="hero__stripe hero__stripe--a" aria-hidden="true" style={{ '--depth': 1.6 }} />
+        <span className="hero__stripe hero__stripe--b" aria-hidden="true" style={{ '--depth': 1.1 }} />
+        <figure className="hero__figure" style={{ '--depth': 0.5 }}>
+          <img
+            src="/img/steven-cutout.webp"
+            alt="Steven Pelaez sonriendo y mostrando el bíceps"
+            width="960"
+            height="1100"
+            fetchPriority="high"
+          />
+        </figure>
       </div>
     </section>
   )
