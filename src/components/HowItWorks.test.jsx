@@ -14,4 +14,10 @@ describe('HowItWorks', () => {
     expect(tabs[0]).toHaveAttribute('aria-expanded', 'true')
     expect(screen.getAllByRole('button', { expanded: true })).toHaveLength(1)
   })
+
+  it('shows a photo in the open stage instead of a video', () => {
+    const { container } = render(<HowItWorks />)
+    expect(container.querySelector('video')).toBeNull()
+    expect(container.querySelector('.stage.is-open img')).not.toBeNull()
+  })
 })

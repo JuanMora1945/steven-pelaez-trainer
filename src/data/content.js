@@ -51,27 +51,27 @@ export const plans = {
 export const steps = [
   {
     name: 'Valoración',
-    clip: 'coach-bench',
+    photo: '/img/steven-smile.jpg',
     text: 'Hablamos de tu objetivo, tu historial y tus horarios. Tomamos medidas y fotos de inicio para comparar después.',
   },
   {
     name: 'Tu plan',
-    clip: 'steven-pulldown',
+    photo: '/img/process/curl.jpg',
     text: 'Armo tu rutina según tus días, tu nivel y el gimnasio donde entrenas. Nada de copiar la rutina de otro.',
   },
   {
     name: 'Entrenar',
-    clip: 'steven-shoulder',
+    photo: '/img/process/coach-bench.jpg',
     text: 'En persona corrijo tu técnica en cada serie. Online recibes el video de cada ejercicio y me mandas los tuyos.',
   },
   {
     name: 'Seguimiento',
-    clip: 'steven-row',
+    photo: '/img/process/row.jpg',
     text: 'Cada semana revisamos cargas, sensaciones y alimentación por WhatsApp. Si algo no funciona, lo cambiamos.',
   },
   {
     name: 'Resultados',
-    clip: 'steven-squat',
+    photo: '/img/process/squat.jpg',
     text: 'Cada mes comparamos medidas y fotos contra el inicio y subimos el nivel del plan.',
   },
 ]
@@ -103,10 +103,10 @@ export const faqs = [
   },
 ]
 
-// Short clips from Steven's reels (muted, 6 s, 540 px wide).
-export const clientClips = [
-  { src: '/video/client-deadlift.mp4', poster: '/video/client-deadlift.jpg', label: 'Peso muerto' },
-  { src: '/video/client-pullup.mp4', poster: '/video/client-pullup.jpg', label: 'Dominadas' },
-  { src: '/video/coach-glute.mp4', poster: '/video/coach-glute.jpg', label: 'Día de glúteo' },
-  { src: '/video/coach-clients.mp4', poster: '/video/coach-clients.jpg', label: 'Tren inferior en máquina' },
+// Frames of Steven's clients training, taken from his Instagram reels.
+export const clientPhotos = [
+  { src: '/img/clients/deadlift.jpg', label: 'Peso muerto', alt: 'Clienta de Steven terminando un peso muerto con barra' },
+  { src: '/img/clients/pullup.jpg', label: 'Dominadas', alt: 'Clienta de Steven haciendo dominadas' },
+  { src: '/img/clients/red-deadlift.jpg', label: 'Peso muerto rumano', alt: 'Clienta de Steven bajando la barra en peso muerto rumano' },
+  { src: '/img/clients/leg-machine.jpg', label: 'Tren inferior', alt: 'Clienta de Steven sonriendo en una máquina de pierna' },
 ]

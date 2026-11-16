@@ -81,8 +81,8 @@ export function Pricing() {
       <div className="pricing__grid">
         <PlanCard
           plan={plans.presencial}
-          photo="/img/steven-smile.jpg"
-          alt="Steven Pelaez sonriendo con su uniforme de entrenador en Smart Fit"
+          photo="/img/steven-clients.jpg"
+          alt="Steven Pelaez con cuatro de sus clientas en Smart Fit Unicentro"
         />
         <PlanCard
           plan={plans.online}
