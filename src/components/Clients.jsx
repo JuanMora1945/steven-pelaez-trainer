@@ -1,4 +1,5 @@
 import { clientPhotos } from '../data/content'
+import SectionCta from './SectionCta'
 
 // Bento grid: tiles of different sizes; the caption rises over the photo on hover or focus.
 export default function Clients() {
@@ -22,6 +23,10 @@ export default function Clients() {
           </li>
         ))}
       </ul>
+      <SectionCta
+        text="¿Quieres entrenar así? Steven te arma el plan según tu objetivo."
+        message="Hola Steven, vi tu página y quiero entrenar contigo."
+      />
     </section>
   )
 }

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { steps } from '../data/content'
 import LazyVideo from './LazyVideo'
+import SectionCta from './SectionCta'
 
 export default function HowItWorks() {
   const [open, setOpen] = useState(0)
@@ -54,6 +55,10 @@ export default function HowItWorks() {
           )
         })}
       </div>
+      <SectionCta
+        text="El primer paso es la valoración. Escríbele a Steven y cuadran el día."
+        message="Hola Steven, vi tu página y quiero agendar mi valoración."
+      />
     </section>
   )
 }

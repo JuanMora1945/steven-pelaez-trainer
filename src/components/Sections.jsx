@@ -244,6 +244,10 @@ export function Footer() {
         </nav>
       </div>
       <p className="footer__small">
+        Steven Pelaez es entrenador personal en Smart Fit Unicentro. Este es su sitio personal e independiente: no es un
+        sitio oficial de Smart Fit.
+      </p>
+      <p className="footer__small">
         © {YEAR} Steven Pelaez · Fotos: {contact.instagramHandle} · Sitio hecho por{' '}
         <a href="https://github.com/JuanMora1945">Juan Mora</a>
       </p>
