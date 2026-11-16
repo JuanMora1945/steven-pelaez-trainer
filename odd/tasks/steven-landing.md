@@ -62,3 +62,4 @@ Branch: `feat/landing` · Delivery: single PR (Juan approves push/PR) · Tests: 
 - L34 (2026-11-15, Juan, verbatim): "usa esta foto mejor en el apartado de clientes en accion". Replaced the client squat photo with the fuller frame (TikTok watermark and caption removed). Tests 30/30.
 - L35 (2026-11-15, Juan, verbatim): "pon esa mejor en la seccion de clientes". Sharp Romanian deadlift photo (TikTok watermark removed with delogo) replaces the video-frame RDL tile. Tests 31/31.
 - L36 (2026-11-15, Juan, verbatim): "la Última foto que te pasé era para reemplazar esta. Y la que eliminas te vuelve a ponerla, por favor." The new deadlift photo replaces the squat tile ("Peso muerto con barra"); the red-shorts RDL frame is restored. Tests 30/30.
+- L37 (2026-11-16, Juan, verbatim): "Mejora esa parte de los bordes que sea más natural, más suavizado." Cutout edge feather: erosion 3 px + blur 1.8 (was 4 px + 0.7 + contrast curve, which looked hard). Tests 30/30.
