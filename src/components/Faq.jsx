@@ -4,7 +4,7 @@ import { buildWhatsAppLink } from '../lib/whatsapp'
 
 const otherQuestion = buildWhatsAppLink('Hola Steven, vi tu página y tengo una pregunta: ')
 
-// Accordion: one question open at a time, each answer with a WhatsApp shortcut.
+// Accordion: one question open at a time.
 export default function Faq() {
   const [open, setOpen] = useState(0)
 
@@ -24,7 +24,6 @@ export default function Faq() {
       <ul className="faq__list">
         {faqs.map((item, i) => {
           const isOpen = i === open
-          const ask = buildWhatsAppLink(`Hola Steven, vi tu página. Tengo una duda: ${item.q}`)
           return (
             <li key={item.q} className={`faq__item${isOpen ? ' is-open' : ''}`}>
               <h3 className="faq__q">
@@ -42,9 +41,6 @@ export default function Faq() {
               </h3>
               <div id={`faq-a-${i}`} className="faq__a" role="region" aria-labelledby={`faq-q-${i}`} hidden={!isOpen}>
                 <p>{item.a}</p>
-                <a className="faq__ask" href={ask} target="_blank" rel="noopener noreferrer">
-                  Pregúntale a Steven
-                </a>
               </div>
             </li>
           )

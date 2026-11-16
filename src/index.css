@@ -1106,25 +1106,6 @@ a {
   max-width: 60ch;
 }
 
-.faq__ask {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 14px;
-  font-weight: 700;
-  color: var(--yellow);
-  text-decoration: none;
-}
-
-.faq__ask::after {
-  content: '→';
-  transition: translate 200ms var(--ease);
-}
-
-.faq__ask:hover::after {
-  translate: 4px 0;
-}
-
 /* Contact: the closing call to action */
 .contact {
   background: var(--yellow);

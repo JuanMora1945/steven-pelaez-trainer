@@ -30,13 +30,11 @@ describe('Faq accordion', () => {
     expect(first).toHaveAttribute('aria-expanded', 'false')
   })
 
-  it('offers a WhatsApp link with the question already written', () => {
+  it('shows only the answer, without a "Pregúntale a Steven" link', () => {
     render(<Faq />)
     const panel = screen.getByRole('region', { name: faqs[0].q })
-    const link = within(panel).getByRole('link', { name: /pregúntale a steven/i })
-    const href = decodeURIComponent(link.getAttribute('href'))
-    expect(href).toMatch(/^https:\/\/wa\.me\/stevenpelaez_13\?text=/)
-    expect(href).toContain(faqs[0].q)
+    expect(within(panel).queryByRole('link')).toBeNull()
+    expect(panel.textContent).not.toMatch(/pregúntale/i)
   })
 
   it('invites visitors whose question is not listed to write on WhatsApp', () => {
