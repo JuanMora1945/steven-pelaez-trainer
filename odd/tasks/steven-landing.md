@@ -22,7 +22,7 @@ Branch: `feat/landing` · Delivery: single PR (Juan approves push/PR) · Tests: 
 | T2 | S3, S8 | inline | done | RED (4 files failed: modules missing) → GREEN 10/10 |
 | T3 | S2, S5, S7, S8 | inline | done | sections, plan builder, motion checked in Chrome |
 | T4 | S6 | inline | done | inspect.mjs 0 FAIL at 1440/768/390 |
-| T5 | all | inline | pending | build, Chrome check, report |
+| T5 | all | inline | done | live at steven-pelaez-trainer.pages.dev |
 
 ## Log
 
@@ -66,3 +66,4 @@ Branch: `feat/landing` · Delivery: single PR (Juan approves push/PR) · Tests: 
 - L38 (2026-11-16, Juan, verbatim): "Acomoda eso." (¿EMPEZAMOS? overflowing and the ¿ overlapping the text). Title now sized from its container (min(11rem, 15.5cqi)), line-height 1, nowrap; checked 360-1440 px and with 150% browser font size: fits, 20 px gap. Tests 30/30.
 - L39 (2026-11-16, Juan, verbatim): "En la versión de celular la página parece muy larga, hay que scrollear mucho para terminar. Optimiza eso, por favor." Phone page went from 10521 px (12.5 screens) to 7696 px (9.1): plans and clients as swipe carousels with a peeking next card, credentials in one row, landscape process media, About photos side by side, tighter section and builder spacing, footer room for the floating button. Desktop unchanged. Tests 30/30. Remaining inspect FAILs at 390 are the intended carousels (side-scroll, peeking card at edge) plus earlier known ones.
 - L40 (2026-11-16, Juan, verbatim): "En esta sección para celular las imágenes se cortan. Puedes hacer que cuando se abra la web en un dispositivo móvil las imágenes se ajusten para que no se corten." Phone process media now keep their natural ratio (object-fit contain, max-height 68svh, dark letterbox). Checked all 5 stages in headless Chrome at 390 px: none cropped. Tests 30/30.
+- L41 (2026-11-16, Juan, verbatim): "Sube lo que tengas que subir al GitHub y quiero que montes la página a mi nueva cuenta de Cloudflare." and "stiven y sus clientes dieron permiso". Private repo JuanMora1945/steven-pelaez-trainer created, feat/landing pushed. Cloudflare Pages project steven-pelaez-trainer connected via the GitHub app limited to this repo (Juan authorized it himself on GitHub). Build: pnpm build, output dist, NODE_VERSION=22, production branch feat/landing. Live: https://steven-pelaez-trainer.pages.dev (HTML, images, video, sitemap, robots return 200; image cache headers applied).
