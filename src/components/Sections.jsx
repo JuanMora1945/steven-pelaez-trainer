@@ -86,8 +86,8 @@ export function Pricing() {
         />
         <PlanCard
           plan={plans.online}
-          photo="/img/steven-chest.jpg"
-          alt="Steven Pelaez entrenando hombro en una máquina del gimnasio"
+          photo="/img/steven-online.jpg"
+          alt="Steven Pelaez con el celular en la mano frente al espejo del gimnasio"
         />
       </div>
     </section>

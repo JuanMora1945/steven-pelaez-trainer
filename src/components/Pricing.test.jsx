@@ -19,3 +19,11 @@ describe('Pricing', () => {
     }
   })
 })
+
+describe('Pricing photos', () => {
+  it('shows Steven with his phone on the online plan', () => {
+    render(<Pricing />)
+    const plan = screen.getByRole('article', { name: /asesoría online/i })
+    expect(within(plan).getByRole('img')).toHaveAttribute('src', '/img/steven-online.jpg')
+  })
+})
