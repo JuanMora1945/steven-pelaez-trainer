@@ -1103,6 +1103,7 @@ a {
 }
 
 .contact__inner {
+  container-type: inline-size;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   justify-items: start;
@@ -1112,9 +1113,12 @@ a {
 .contact__title {
   font-family: var(--display);
   font-weight: 900;
-  font-size: clamp(4rem, 1.5rem + 10vw, 11rem);
-  line-height: 0.85;
+  /* Sized from its own box (cqi) so it always fits, whatever the zoom or font settings. */
+  font-size: min(11rem, 15.5cqi);
+  line-height: 1;
+  padding-bottom: 0.06em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .contact__text {
@@ -1563,9 +1567,7 @@ a {
     padding-inline: 16px;
   }
 
-  .contact__title {
-    font-size: 16vw;
-  }
+
 
   .contact__cta {
     width: 100%;
