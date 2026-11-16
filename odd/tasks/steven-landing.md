@@ -61,3 +61,4 @@ Branch: `feat/landing` · Delivery: single PR (Juan approves push/PR) · Tests: 
 - L33 (2026-11-15, Juan, verbatim): "no le hagas zoom a la foto que se vea natural". Clients grid is now four equal 2:3 portrait tiles (2 per row on tablet and phone), hover zoom removed, so photos show whole. Tests 30/30.
 - L34 (2026-11-15, Juan, verbatim): "usa esta foto mejor en el apartado de clientes en accion". Replaced the client squat photo with the fuller frame (TikTok watermark and caption removed). Tests 30/30.
 - L35 (2026-11-15, Juan, verbatim): "pon esa mejor en la seccion de clientes". Sharp Romanian deadlift photo (TikTok watermark removed with delogo) replaces the video-frame RDL tile. Tests 31/31.
+- L36 (2026-11-15, Juan, verbatim): "la Última foto que te pasé era para reemplazar esta. Y la que eliminas te vuelve a ponerla, por favor." The new deadlift photo replaces the squat tile ("Peso muerto con barra"); the red-shorts RDL frame is restored. Tests 30/30.

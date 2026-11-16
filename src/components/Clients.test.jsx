@@ -24,17 +24,12 @@ describe('Clients', () => {
     }
   })
 
-  it('shows the back squat instead of the conventional deadlift photo', () => {
-    const { container } = render(<Clients />)
-    const srcs = [...container.querySelectorAll('.bento img')].map((i) => i.getAttribute('src'))
-    expect(srcs).toContain('/img/clients/squat.jpg')
-    expect(srcs).not.toContain('/img/clients/deadlift.jpg')
-  })
-
-  it('uses the sharp Romanian deadlift photo instead of the video frame', () => {
+  it('shows the new Romanian deadlift in place of the squat and keeps the red-shorts deadlift', () => {
     const { container } = render(<Clients />)
     const srcs = [...container.querySelectorAll('.bento img')].map((i) => i.getAttribute('src'))
     expect(srcs).toContain('/img/clients/rdl.jpg')
-    expect(srcs).not.toContain('/img/clients/red-deadlift.jpg')
+    expect(srcs).toContain('/img/clients/red-deadlift.jpg')
+    expect(srcs).not.toContain('/img/clients/squat.jpg')
+    expect(srcs).not.toContain('/img/clients/deadlift.jpg')
   })
 })
