@@ -373,9 +373,9 @@ a {
   z-index: -1;
   background: radial-gradient(
     circle at calc(55% + var(--mx, 0) * 90%) calc(40% + var(--my, 0) * 70%),
-    rgb(255 212 0 / 0.55) 0%,
-    rgb(255 212 0 / 0.2) 20%,
-    rgb(255 212 0 / 0) 45%
+    rgb(255 212 0 / 0.16) 0%,
+    rgb(255 212 0 / 0.06) 18%,
+    rgb(255 212 0 / 0) 36%
   );
   mix-blend-mode: screen;
   pointer-events: none;
